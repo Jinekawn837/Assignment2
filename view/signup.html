@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+       <meta name="viewport" content="with=device-width, initial-scale=1.0">
+       <title>TESTING 123</title>
+       <link rel="stylesheet" href="style.css">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+       <script src="https://kit.fontawesome.com/c64c7abbbb.js" crossorigin="anonymous"></script>
+       <?php include 'sendemail.php';?>
+</head>
+<body>
+    <section class="header">
+        <!--Top of site w/ menu-->
+        <nav>
+            <a href="index.html"><img src="images/Logo.png"><img src="images/CompName.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-window-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="roomlisting.html">Room Listing</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars" onclick="hideMenu()"></i>
+        </nav>
+        
+        <div class="signup-box">
+            <h1>Sign Up</h1>
+            <h4>It's free and only takes a minute</h4>
+            <form>
+                <label>First Name</label>
+                <input type="text" placeholder="" id="fname">
+                <label>Last Name</label>
+                <input type="text" placeholder="" id="lname">
+                <label>Email</label>
+                <input type="email" placeholder="" id="email"  name="email">
+                <label>Password</label>
+                <input type="password" placeholder="" id="pwd1">
+                <label>Confirm Password</label>
+                <input type="password" placeholder="" id="pwd2">
+                <input type="submit" value="Submit" onClick="signup()">
+            </form>
+        </div>
+        <p class="para-2">Already have an account? <a href="login.html">Login here</a></p>
+    </section>
+
+    <!--Footer-->
+    <div class="footer">
+        <div class="inner_footer">
+            <div class= "logo_container">
+                <h1>Follow Our Social Media</h1>
+                <a href="https://www.instagram.com/groundcnc/">Instagram</a>
+            </div>
+        
+            <div class= "footer_third">
+            <!--Empty Space-->
+            </div>
+            <div class= "footer_third">
+            <!--Empty Space-->
+            </div>
+            <div class= "footer_third">
+              <h1>Contact Us</h1>
+              <h3>Email: groundcnc@gmail.com</h3>
+            </div>
+        </div>
+    </div>
+    
+    <!--Js script for sign up-->
+    <script>
+        function signup() {
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+		    var uname = document.getElementById("email").value;
+		    var pwd = document.getElementById("pwd1").value;
+            var pwd2 = document.getElementById("pwd2").value;
+            var letterNumber = /^[0-9a-zA-Z]+$/;
+		    if(fname == ''){
+                alert("Please enter your first name.");
+            }
+            else if(lname == ''){
+                alert("Please enter your last name.");
+            }
+            else if(uname =='') {
+		    	alert("Please enter email.");
+		    }
+		    else if(pwd == '') {
+            	alert("Please enter password.");
+		    }
+            else if(pwd2 != pwd){
+                alert("Passwords don't match.");
+            }
+            else if(pwd.length < 5 || pwd.length > 13){
+			    alert("Password must be between 6 and 12 characters long.");
+		    }
+            else if(!pwd.match(letterNumber)){
+                alert("Password must only contain letters and numbers.");
+            }
+		    else {
+	            alert('Thank you for signing up. Redirecting back to home page.');
+                window.location = "dashboard.html";
+		    }
+	    }
+	    //Reset Inputfield code.
+	    function clearFunc()
+	    {
+	    	document.getElementById("email").value="";
+	    	document.getElementById("pwd1").value="";
+	    }	
+    </script>
+
+    <!--Javascript for mobile menu--> 
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+</body>
+</html>

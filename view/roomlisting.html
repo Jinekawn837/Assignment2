@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+       <meta name="viewport" content="with=device-width, initial-scale=1.0">
+       <title>TESTING 123</title>
+       <link rel="stylesheet" href="style.css">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+       <script src="https://kit.fontawesome.com/c64c7abbbb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+        <!--Top of site w/ menu-->
+        <nav>
+            <a href="index.html"><img src="images/Logo.png"><img src="images/CompName.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-window-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="roomlisting.html">Room Listing</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars" onclick="hideMenu()"></i>
+        </nav>
+        
+        <!--Booking Form-->
+        <div class="text-box">
+            <h1>Check Out The Locations Below!</h1>
+        </div>
+        <!--middle-->
+        <div class="grid_border">
+            <div class="inner_grid_border">
+                <div class="grid">
+                    <div><img src="images/ap1.jpg"><h2>Modern Apartment by the Beach!</h2><br><h3>$130 CAD/night</h3></div>
+                    <div><img src="images/ap2.jpg"><h2>Rustic Home near the Ocean!</h2><br><h3>$195 CAD/night</h3></div>
+                    <div><img src="images/ap3.jpg"><h2>Apartment Near Downtown! - Free Wifi</h2><br><h3>$87 CAD/night</h3></div>
+                    <div><img src="images/ap4.jpg"><h2>Home near the Mountains!</h2><br><h3>$150 CAD/night</h3></div>
+                    <div><img src="images/ap5.jpg"><h2>Quiet Getaway on the Lake!</h2><br><h3>$120 CAD/night</h3></div>
+                    <div><img src="images/ap6.jpg"><h2>Lovely Apartment Downtown</h2><br><h3>$200 CAD/night</h3></div>
+              </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!--Footer-->
+    <div class="footer">
+        <div class="inner_footer">
+            <div class= "logo_container">
+                <h1>Follow Our Social Media</h1>
+                <a href="https://www.instagram.com/groundcnc/">Instagram</a>
+            </div>
+        
+            <div class= "footer_third">
+            <!--Empty Space-->
+            </div>
+            <div class= "footer_third">
+            <!--Empty Space-->
+            </div>
+            <div class= "footer_third">
+              <h1>Contact Us</h1>
+              <h3>Email: groundcnc@gmail.com</h3>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Javascript for mobile menu--> 
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+</body>
+</html>
